@@ -208,4 +208,28 @@
 
 // console.log(isPalindrome(121));
 
+// Найти общий вес всех лементов, отсортировав цену больше 70 и количество меньше 10
 
+// const food = [
+//   { name: "d", weight: 300, price: 65, amount: 10 },
+//   { name: "s", weight: 350, price: 75, amount: 11 },
+//   { name: "c", weight: 340, price: 60, amount: 5 },
+//   { name: "v", weight: 310, price: 76, amount: 3 },
+//   { name: "w", weight: 380, price: 72, amount: 2 },
+// ];
+
+// const func = (food) => {
+//   const sort = food.filter((el) => el.price > 70 && el.amount < 10);
+//   return sort.reduce((acc, el) => {
+//     return acc + el.weight * el.amount;
+//   }, 0);
+// };
+
+// const func = (food) =>
+//   food.reduce(
+//     (acc, el) =>
+//       el.price > 70 && el.amount < 10 ? acc + el.weight * el.amount : null,
+//     0
+//   );
+
+// console.log(func(food));

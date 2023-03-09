@@ -31,7 +31,7 @@
 // const fromPairs = (array) => {
 //   //   const obj = Object.fromEntries(array);
 //   //   return obj;
-//   array.reduce((acc, value) => {
+//   return array.reduce((acc, value) => {
 //     if (Array.isArray(value)) {
 //       acc[value[0]] = value[1];
 //     }
@@ -185,7 +185,7 @@
 
 // console.log(isEmpty({}));
 
-// 5. Напишите функцию, которая поверхностно сравнивает два объекта.
+// // 5. Напишите функцию, которая поверхностно сравнивает два объекта.
 
 // const isEqual = (firstObject, secondObject) => {
 //   const arr1 = Object.keys(firstObject).map((el) => firstObject[el]);
@@ -207,3 +207,7 @@
 // const data2 = { a: 1, b: 2 };
 
 // console.log(isEqual(data, data2));
+
+
+
+

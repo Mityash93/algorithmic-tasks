@@ -493,4 +493,86 @@
 
 // console.log(longestCommonPrefix(["flower", "flow", "flight"]));
 
+// const users = [
+//   {
+//     name: "dima",
+//     age: 20,
+//   },
+//   {
+//     name: "Aenis",
+//     age: 30,
+//   },
+//   {
+//     name: "kam",
+//     age: 25,
+//   },
+// ];
 
+// users.sort((el1, el2) => {
+//     if (el1.name < el2.name) return -1
+//     if (el1.name === el2.name) return 0
+//     if (el1.name > el2.name) return 1
+// });
+
+// console.log(users);
+
+// const arr = [1,3,5,4]
+
+// const arr2 = arr.map((el, i, arr) => arr[arr.length - 1 - i])
+
+// console.log(arr2);
+
+// const arr = [0, "", 4, false, undefined];
+
+// const a = (arr) => {
+//   const arr1 = [];
+//   arr.forEach((el) => arr1.push(Boolean(el)));
+//   return arr1;
+// };
+
+// console.log(a(arr));
+
+// const a = "abc";
+// const b = a.length; // Создается wrapper, boxing типа обьекта new String(a), примитивы нельзя изменять
+
+// console.log(b);
+
+// type ArrType = {
+//     name: String,
+//     age: Number,
+//     id: string
+// }
+
+// const arr: Array<ArrType> = [
+//     {name: "dima", age: 29, id: "1"},
+//     {name: "kam", age: 21, id: "2"},
+//     {name: "den", age: 28, id: "3"}
+// ]
+
+// const change = <T>(arr: Array<T>, key: keyof T) => {
+//     return arr.map((el) => {
+//         return d{
+//             key: el[key]
+//         }
+//     })
+// }
+
+// console.log(change(arr, "age"));
+
+// Уникальность в массиве
+
+// const arr = [1, 2, 2, 3, 4, 4];
+
+// const arr2 = [...new Set(arr)]
+
+// console.log(arr2);
+
+// let count = 0;
+
+// const a = () => {
+//     return count++;
+// };
+
+// console.log(a());
+// console.log(a());
+// console.log(a());

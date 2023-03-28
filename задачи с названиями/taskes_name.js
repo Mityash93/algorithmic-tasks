@@ -233,3 +233,12 @@
 //   );
 
 // console.log(func(food));
+
+// const func = (food) =>
+//   food.reduce(
+//     (acc, el) =>
+//       el.price > 70 && el.amount < 10 ? acc + el.weight * el.amount : null,
+//     0
+//   );
+
+// console.log(func(food));

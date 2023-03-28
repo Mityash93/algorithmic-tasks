@@ -203,10 +203,7 @@
 //   return newArr.length === arr1.length ? true : false;
 // };
 
-// const data = { a: 1, b: 2 };
-// const data2 = { a: 1, b: 2 };
 
-// console.log(isEqual(data, data2));
 
 
 

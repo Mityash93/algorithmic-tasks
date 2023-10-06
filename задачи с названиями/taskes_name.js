@@ -178,8 +178,8 @@
 
 10; //  Сколько раз встречается буква в строке
 
-// const str = "adew";
-// const s = "s";
+// const str = "adedw";
+// const s = "d";
 
 // function a(str, s) {
 //   let count = 0;
@@ -191,8 +191,6 @@
 
 //   return count;
 // }
-
-// console.log(a(str, s));
 
 // var isPalindrome = function (x) {
 //   const x2 = x.toString();
@@ -233,3 +231,343 @@
 //   );
 
 // console.log(func(food));
+
+// 11; Сколько раз встречается слово в массиве ({kiwi: 2, apple: 1, orange: 3})
+
+// const fruits = ["kiwi", "apple", "orange", "kiwi", "orange", "orange", "kiwi"];
+
+// const countFruits = (fruits) => {
+//   return fruits.reduce((acc, fruit) => {
+//     if (fruit === "kiwi") {
+//       acc.kiwi = (acc.kiwi || 0) + 1;
+//     } else if (fruit === "apple") {
+//       acc.apple = (acc.apple || 0) + 1;
+//     } else if (fruit === "orange") {
+//       acc.orange = (acc.orange || 0) + 1;
+//     }
+//     return acc;
+//   }, {});
+// };
+
+// const countFruits = (fruits) => {
+//   const count = {};
+
+//   fruits.forEach((f) => {
+//     if (!count[f]) {
+//       count[f] = 1;
+//     } else {
+//       count[f]++;
+//     }
+//   });
+
+//   return count;
+// };
+
+// const countFruits = (fruits) => {
+
+//   return fruits.reduce((acc, f) => {
+//     if (!acc[f]) {
+//         acc[f] = 1;
+//     } else {
+//         acc[f]++;
+//     }
+//     return acc
+//   }, {});
+
+// };
+
+// console.log(countFruits(fruits));
+
+// 12; Вывести массив из уникальных элементов ["kiwi", "apple", "orange"]
+
+// const uniqArr = (fruits) => {
+//     return fruits.reduce((acc, f) => {
+//         if(!acc.includes(f)){
+//             acc.push(f)
+//         }
+//         return acc
+//     }, [])
+// }
+
+// const uniqArr = (fruits) => {
+//     const unique = {}
+//     fruits.forEach((f) => {
+//         unique[f] = true;
+//     })
+//     return Object.keys(unique)
+// }
+
+// const uniqArr = (fruits) => {
+//   return fruits.filter((value, index, self) => {
+//     return self.indexOf(value) === index;
+//   });
+// };
+
+// console.log(uniqArr(fruits));
+
+// 13; Вывести {
+//     '20': [{ name: "alex", age: 20 }, { name: "dany", age: 20 },]
+//     '24': [{ name: "alex", age: 24 }]
+//     '25': [{ name: "alex", age: 25 },]
+// }
+
+// const students = [
+//   { name: "alex", age: 20 },
+//   { name: "vasy", age: 24 },
+//   { name: "dima", age: 25 },
+//   { name: "dany", age: 20 },
+// ];
+
+// const sort = (students) => {
+//   //   const res = {};
+//   //   students.forEach((student) => {
+//   //     if (!res[student.age]) {
+//   //       res[student.age] = [student];
+//   //     } else {
+//   //       res[student.age].push(student);
+//   //     }
+//   //   });
+//   //   return res;
+
+//   return students.reduce((acc, student) => {
+//     !acc[student.age]
+//       ? (acc[student.age] = [student])
+//       : acc[student.age].push(student);
+//       return acc
+//   }, {});
+// };
+
+// console.log(sort(students));
+
+// 14; Вывести сумму из 2 чисел в массиве если такие есть [11; -1] или если нет то пустой массив
+
+// const array = [2, 3, 5, -1, 2, 11, 4];
+// const sum = 10;
+
+// const findPairs = (array, sum) => {
+//   const newArr = [];
+//   for (let i = 0; i < array.length; i++) {
+//     for (let j = i + 1; j < array.length; j++) {
+//       array[i] + array[j] === sum ? newArr.push(array[i], array[j]) : [];
+//     }
+//   }
+//   return newArr;
+// };
+
+// console.log(findPairs(array, sum));
+
+// 14; Вывести массив всех пицц
+
+// const users = [
+//   {
+//     name: "vasy",
+//     pizza: ["meet", "pepa"],
+//   },
+//   {
+//     name: "ser",
+//     pizza: ["fish"],
+//   },
+//   {
+//     name: "irina",
+//     pizza: ["cora", "rita"],
+//   },
+// ];
+
+// const sortPizza = (user) => {
+//     return users.reduce((acc, user) => {
+//         return [...acc, ...user.pizza]
+//     }, [])
+// }
+
+// console.log(sortPizza(users));
+
+// Владилен Минин задачи
+
+1;
+// function isUnique(string) {
+//     // const arr = string.split('')
+// 	// const newArr = []
+//     // arr.forEach((el) => {
+//     //     if(!newArr.includes(el)) {
+//     //         newArr.push(el)
+//     //     }
+//     // })
+//     // if(newArr.length !== arr.length) {
+//     //     return false
+//     // } return true
+
+//     // for (let i = 0; i < string.length; i++) {
+//     //     const el = string[i]
+
+//     //     if(string.indexOf(el) !== i) {
+//     //         return false
+//     //     }
+//     // }
+//     // return true
+
+//     // return new Set(string).size === string.length
+// }
+
+// console.log(isUnique('abcdef')) // -> true
+// console.log(isUnique('1234567')) // -> true
+// console.log(isUnique('abc12ABC')) // -> true
+// console.log(isUnique('abcadef')) // -> false
+
+2;
+// function flatten(array) {
+//   //   return array.flat(Infinity)
+
+//   let res = [];
+
+//   array.forEach((arr) => {
+//     if (Array.isArray(arr)) {
+//       res = [...res, ...flatten(arr)];
+//     } else {
+//       res.push(arr);
+//     }
+//   });
+
+//   return res;
+// }
+
+// console.log(flatten([[1], [[2, 3]], [[[4]]]])); // -> [1, 2, 3, 4]
+
+3;
+// function removeDupes(str) {
+//     // return str.split('').reduce((acc, el) => {
+//     //     if (!acc.includes(el)) {
+//     //         acc.push(el)
+//     //     }
+//     //     return acc
+//     // }, []).join('')
+
+//     return Array.from(new Set(str)).join('')
+// }
+
+// console.log(removeDupes('abcd')) // -> 'abcd'
+// console.log(removeDupes('aabbccdd')) // -> 'abcd'
+// console.log(removeDupes('abcddbca')) // -> 'abcd'
+// console.log(removeDupes('abababcdcdcd')) // -> 'abcd'
+
+4;
+// function highestFrequency(array) {
+//   //   let maxFrequency = 0;
+//   //   let mostElement = null;
+
+//   //   array.reduce((acc, arr) => {
+//   //     if (!acc[arr]) {
+//   //       acc[arr] = 1;
+//   //     } else {
+//   //       acc[arr]++;
+//   //     }
+
+//   //     if(acc[arr] > maxFrequency) {
+//   //         maxFrequency = acc[arr]
+//   //         mostElement = arr
+//   //     }
+
+//   //     return acc
+
+//   //   }, {});
+
+//   //   return mostElement;
+
+// //   const map = {};
+// //   let maxFreq = 0;
+// //   let maxFreqStr = array[0];
+
+// //   for (let i = 0; i < array.length; i++) {
+// //     const current = array[i];
+
+// //     if (map[current]) {
+// //       map[current]++;
+// //     } else {
+// //       map[current] = 1;
+// //     }
+
+// //     if (map[current] > maxFreq) {
+// //       maxFreq = map[current];
+// //       maxFreqStr = current;
+// //     }
+// //   }
+
+// //   return maxFreqStr;
+// }
+
+// console.log(highestFrequency(["a", "b", "c", "c", "d", "e"])); // -> c
+// console.log(highestFrequency(["abc", "def", "abc", "def", "abc"])); // -> abc
+// console.log(highestFrequency(["abc", "def"])); // -> abc
+// console.log(
+//   highestFrequency([
+//     "abc",
+//     "abc",
+//     "def",
+//     "def",
+//     "def",
+//     "ghi",
+//     "ghi",
+//     "ghi",
+//     "ghi",
+//   ])
+// ); // -> ghi
+
+5;
+// function isStringRotated(source, test) {
+//     // if (source.length !== test.length) {
+//     //   return false
+//     // }
+//     //
+//     // for (let i = 0; i < source.length; i++) {
+//     //   const rotate = source.slice(i, source.length) + source.slice(0, i)
+//     //
+//     //   if (rotate === test) {
+//     //     return true
+//     //   }
+//     // }
+//     //
+//     // return false
+//     return source.length === test.length && (source + source).includes(test)
+//   }
+
+// console.log(isStringRotated("javascript", "scriptjava")); // -> true
+// console.log(isStringRotated("javascript", "iptjavascr")); // -> true
+// console.log(isStringRotated("javascript", "java")); // -> false
+
+6;
+// function search(array, target) {
+// //   let res = -1;
+// //   for (let i = 0; i < array.length; i++) {
+// //     if (array.indexOf(target) === i) {
+// //       res = i;
+// //     }
+// //   }
+// //   return res;
+
+//   return array.reduce((acc, el, index) => {
+//     if (array.indexOf(target) === index) {
+//         acc = index
+//     }
+//     return acc
+//   }, -1)
+// }
+
+// console.log(search([1, 3, 6, 13, 17], 13)); // -> 3
+// console.log(search([1, 3, 6, 13, 17], 12)); // -> -1
+
+7;
+function arraySubset(source, subset) {
+    for (let i = 0; i < subset.length; i++) {
+        if (source.includes(subset[i])) {
+           source.splice(source.indexOf(subset[i]), 1);
+        //    delete source[source.indexOf(subset[i])];
+        } else {
+          return false; 
+        }
+      }
+      return true;
+}
+
+console.log(arraySubset([2, 1, 3], [1, 2, 3])); // -> true
+console.log(arraySubset([2, 1, 1, 3], [1, 2, 3])); // -> true
+console.log(arraySubset([1, 1, 1, 3], [1, 3, 3])); // -> false
+console.log(arraySubset([1, 2], [1, 2, 3])); // -> false

@@ -3,6 +3,14 @@
 // арифметика в массиве
 // const array = [1, 5, 8, 2];
 
+// const func = (arr) => {
+//     let sum = 0;
+//     for (let ar of arr) {
+//         sum += ar
+//     }
+//     return sum
+// }
+
 // 1 способ
 
 // const sum = array.reduce((acc, next) => {
@@ -36,6 +44,22 @@
 
 // 2 способ
 
+// const arr = [1, 2, 4, 3, 2, 4, 5];
+
+// const func = (arr) => {
+//   let max = 0;
+//   let min = 1;
+//   for (let ar of arr) {
+//     ar > max ? (max = ar) : null;
+//     ar < min ? (min = ar) : null;
+//   }
+//   return { max, min };
+// };
+
+// const { max, min } = func(arr);
+
+// console.log(max, min);
+
 // const max = array.reduce((acc, next) => Math.max(acc, next))
 
 // console.log(max);
@@ -60,7 +84,7 @@
 
 // определить true or false in the array
 
-// const array = ['', NaN, 7, 'hi'];
+// const array = ["", null, 7, "hi"];
 
 // const arr = [];
 
@@ -82,7 +106,7 @@
 
 // сумма в массиве, если там есть вложенные массивы
 
-// const arr = [[1, 3, [4, 6]], [5], [8, 5]]
+// const arr = [[1, 3, [4, 6]], [5], [8, 5]];
 
 // 1 способ (просто через flat)
 

@@ -600,3 +600,485 @@
 // console.log(a());
 // console.log(a());
 // console.log(a());
+
+// var isAnagram = function(s, t) {
+
+//     // if (s.length !== t.length) {
+//     //     return false;
+//     // }
+
+//     // for (let i = 0; i < s.length; i++) {
+//     //     if (t.includes(s[i])) {
+//     //         t = t.replace(s[i], '');
+//     //     } else {
+//     //         return false;
+//     //     }
+//     // }
+
+//     // return t.length === 0;
+
+//     s = s.split("").sort()
+//     t = t.split("").sort()
+
+//     console.log(s);
+//     console.log(t);
+
+//     if (s.length !== t.length)
+//         return false;
+
+//     for (var i = 0; i < s.length; i++)
+//         if (s[i] !== t[i])
+//             return false;
+
+//     return true;
+// };
+
+// console.log(isAnagram("aacc", "ccac"));
+
+// const count = (array) => {
+//     const countMap = array.reduce((acc, el) => {
+//       if (!acc[el]) {
+//         acc[el] = 1;
+//       } else {
+//         acc[el]++;
+//       }
+//       return acc;
+//     }, {});
+
+//     const result = Object.keys(countMap)
+//       .map(key => `${key}:${countMap[key]}`)
+//       .join(', ');
+
+//     return result;
+//   };
+
+// const arr = [1, 2, 3, 4, 4];
+// const result = count(arr);
+// console.log(result);
+
+// var isPalindrome = function(x) {
+//     x = x.toString()
+
+//     if (x === x.split('').reverse().join('')) return true
+//     return false
+// };
+
+// console.log(isPalindrome(124));
+
+// var romanToInt = function (s) {
+//     let sum = 0
+//     let prevNumber = s[0]
+
+//     const symbol = {
+//         'I': 1,
+//         'V': 5,
+//         'X': 10,
+//         'L': 50,
+//         'C': 100,
+//         'D': 500,
+//         'M': 1000,
+//     }
+
+//     for (let i = 0; i < s.length; i++) {
+//         console.log(symbol[s[i + 1]]);
+//         if(symbol[s[i]] < symbol[s[i + 1]]){
+//             sum -= symbol[s[i]]
+//         } else {
+//             sum += symbol[s[i]]
+//         }
+//     }
+
+//     return sum
+// };
+
+// console.log(romanToInt('MCMXCIV'));
+
+// const arr = [1, 2, 3]
+
+// const ar = (arr) => {
+//     arr.splice(0, 2)
+//     return arr
+// }
+
+// console.log(ar(arr));
+
+// var mergeTwoLists = function (list1, list2) {
+//   const newArr = list1.concat(list2).sort();
+//   return newArr;
+// };
+
+// console.log(mergeTwoLists([1, 2, 4], [1, 3, 4]));
+
+// var addTwoNumbers = function(l1, l2) {
+//     const num1 = Number(l1.reverse().join(''))
+//     const num2 = Number(l2.reverse().join(''))
+
+//     // const resultArray = Array.from(sum.toString()).map(Number);
+
+//     const sum = (num1 + num2).toString().split('');
+
+//     const resSum = sum.map((el) => Number(el))
+
+//     return resSum.reverse();
+// };
+
+// console.log(addTwoNumbers([9,9,9,9,9,9,9], [9,9,9,9]));
+
+// const fizz = (number) => {
+//   const res = [];
+//   for (let i = 1; i <= number; i++) {
+//     if (i % 3 === 0 && i % 5 === 0) {
+//       res.push("fizzbuz");
+//     } else if (i % 5 === 0) {
+//       res.push("buzz");
+//     } else if (i % 3 === 0) {
+//       res.push("fizz");
+//     } else {
+//       res.push(i);
+//     }
+//   }
+
+//   return res.join(', ');
+// };
+
+// console.log(fizz(15));
+
+//   const tree = {};
+
+//   for (const item of data) {
+//     if (!tree[item.id]) {
+//       tree[item.id] = {
+//         name: item.name,
+//         children: {},
+//       };
+//     } else {
+//       tree[item.id].name = item.name;
+//     }
+
+//     if (item.parentId !== 0) {
+//       if (!tree[item.parentId]) {
+//         tree[item.parentId] = {
+//           name: '',
+//           children: {},
+//         };
+//       }
+//       tree[item.parentId].children[item.id] = tree[item.id];
+//     }
+//   }
+
+//   const result = tree[1]; // Предполагается, что корневой элемент имеет id: 1
+
+//   console.log(JSON.stringify(result, null, 2));
+
+// const data = {
+//   mango: ["apple", "grape", "orange", "apple", "banana", "banana", "banana"],
+//   kate: ["grape", "orange", "apple", "grape", "banana"],
+//   poly: ["grape", "orange", "orange", "apple", "grape", "banana"],
+//   ajax: ["grape", "orange", "orange", "apple", "grape", "banana"],
+//   cat: ["grape", "orange", "orange", "apple", "grape", "banana", "banana"],
+// };
+
+// const result = {
+//   ajax: { grape: 2, orange: 2, apple: 1, banana: 1 },
+//   cat: { grape: 2, orange: 2, apple: 1, banana: 2 },
+//   kate: { grape: 2, orange: 1, apple: 1, banana: 1 },
+//   mango: { apple: 2, grape: 1, orange: 1, banana: 3 },
+//   poly: { grape: 2, orange: 2, apple: 1, banana: 1 },
+// };
+
+// const arrObj = (data) => {
+//   const result = {};
+
+//   for (let element in data) {
+//     result[element] = data[element].sort().reduce((acc, el) => {
+//       if (!acc[el]) {
+//         acc[el] = 1;
+//       } else {
+//         acc[el]++;
+//       }
+//       return acc;
+//     }, {});
+
+//     // const sortedResult = {};
+
+//     // Object.keys(result[element])
+//     //   .sort()
+//     //   .forEach((el) => {
+//     //     sortedResult[el] = result[element][el];
+//     //   });
+
+//     // result[element] = sortedResult;
+//   }
+
+//     const sortedResult = {};
+
+//   Object.keys(result).sort().map((element) => {
+//     sortedResult[element] = result[element]
+// })
+
+//   return sortedResult;
+// };
+
+// console.log(arrObj(data));
+
+// const data = [
+//   {
+//     id: 1,
+//     parentId: 0,
+//     name: "Электроника",
+//   },
+//   {
+//     id: 7,
+//     parentId: 2,
+//     name: "Смартфоны",
+//   },
+//   {
+//     id: 2,
+//     parentId: 1,
+//     name: "Мобильные телефоны",
+//   },
+//   {
+//     id: 3,
+//     parentId: 1,
+//     name: "Компьютеры и ноутбуки",
+//   },
+//   {
+//     id: 5,
+//     parentId: 3,
+//     name: "Ноутбуки",
+//   },
+//   {
+//     id: 4,
+//     parentId: 3,
+//     name: "Системные блоки",
+//   },
+//   {
+//     id: 9,
+//     parentId: 5,
+//     name: "Dell",
+//   },
+//   {
+//     id: 8,
+//     parentId: 5,
+//     name: "HP",
+//   },
+//   {
+//     id: 10,
+//     parentId: 5,
+//     name: "Lenovo",
+//   },
+//   {
+//     id: 6,
+//     parentId: 3,
+//     name: "Комплектующие",
+//   },
+// ];
+
+// const jsonObj = {
+//   1: {
+//     name: "Электроника",
+//     children: {
+//       2: {
+//         name: "Мобильные телефоны",
+//         children: {
+//           7: {
+//             name: "Смартфоны",
+//           },
+//         },
+//       },
+//       3: {
+//         name: "Компьютеры и ноутбуки",
+//         children: {
+//           5: {
+//             name: "Ноутбуки",
+//             children: {
+//               9: {
+//                 name: "Dell",
+//               },
+//               8: {
+//                 name: "HP",
+//               },
+//               5: {
+//                 name: "Lenovo",
+//               },
+//             },
+//           },
+//           4: {
+//             name: "Системные блоки",
+//           },
+//           6: {
+//             name: "Комплектующие",
+//           },
+//         },
+//       },
+//     },
+//   },
+// };
+
+//   const tree = {};
+
+//   for (const item of data) {
+//     if (!tree[item.id]) {
+//       tree[item.id] = {
+//         name: item.name,
+//         children: {},
+//       };
+//     } else {
+//       tree[item.id].name = item.name;
+//     }
+
+//     if (item.parentId !== 0) {
+//       if (!tree[item.parentId]) {
+//         tree[item.parentId] = {
+//           name: '',
+//           children: {},
+//         };
+//       }
+//       tree[item.parentId].children[item.id] = tree[item.id];
+//     }
+//   }
+
+// const sortedObj = (data) => {
+//   const tree = {};
+
+//   for (const item of data) {
+//     if (!tree[item.id]) {
+//       tree[item.id] = {
+//         name: item.name,
+//         children: {},
+//       };
+//     } else {
+//       tree[item.id].name = item.name;
+//     }
+
+//     if (item.parentId !== 0) {
+//       if (!tree[item.parentId]) {
+//         tree[item.parentId] = {
+//           name: "",
+//           children: {},
+//         };
+//       }
+//       tree[item.parentId].children[item.id] = tree[item.id];
+//     }
+//   }
+
+//   return tree
+
+// //   const newData = data.reduce((acc, el) => {
+// //     if (!acc[el]) {
+// //       acc[el.id] = {
+// //         name: el.name,
+// //         children: {},
+// //       };
+// //     } else {
+// //       acc[el.id].name = el.name;
+// //     }
+
+// //     if (el.parentId !== 0) {
+// //       if (!acc[el.parentId]) {
+// //         acc[el.parentId] = {
+// //           children: {},
+// //         };
+// //       }
+// //       acc[el.parentId].children[el.id] = acc[el.id];
+// //     }
+
+// //     return acc;
+// //   }, {});
+
+// //   return newData;
+// };
+
+// console.log(sortedObj(data));
+
+// const egg = { name: "'Humpty" };
+// const newEgg = egg;
+// newEgg.class = "4242";
+// const b = newEgg;
+// egg.name = "r3r3";
+
+// console.log(egg); //
+// console.log(newEgg); // ?
+// console.log(b); // ?
+// console.log(egg === b);
+
+// const fnName = "fn3";
+
+// const obj = {
+//   fn1: function () {
+//     console.log(this);
+//     const f = () => console.log(this);
+//     f();
+//   },
+//   fn2() {
+//     console.log(this);
+//   },
+//   [fnName]: () => console.log(this),
+// };
+
+
+// console.log(this); // window or global
+
+// obj.fn1(); // obj and => will be obj because inside call f()
+// obj.fn2(); // obj
+// obj[fnName](); // window or global
+
+// const extModule = {
+//     new: 123
+// }
+
+// const val = obj.fn1.bind(extModule) // change context
+// val.bind(this) // nothing
+
+// obj.fn2.call(extModule) // extModule
+// obj[fnName].apply(extModule) // window or global
+
+// Давайте разберем код и проанализируем, что делает каждая его часть:
+
+// const fnName = "fn3";: Определяет константную переменную fnName со значением "fn3".
+
+// const obj = { ... }: Создает объект obj с тремя методами (fn1, fn2 и fn3). Каждый метод выводит this в консоль.
+
+// console.log(this);: Выводит глобальный объект (this) в консоль. Обратите внимание, что в этом контексте (вне функции) this относится к глобальному объекту.
+
+// obj.fn1();: Вызывает метод fn1 объекта obj. Внутри fn1 есть обычная функция f и стрелочная функция () => console.log(this). Обычная функция f вызывается сразу после своего объявления с использованием f(). Стрелочная функция сохраняет значение this из окружающего контекста, где она была создана (лексическое замыкание). Таким образом, обе инструкции console.log(this) выведут глобальный объект.
+
+// obj.fn2();: Вызывает метод fn2 объекта obj. Эта функция выводит this, который будет объектом obj, так как это объект, вызывающий метод.
+
+// obj[fnName]();: Вызывает метод с именем, равным значению fnName, то есть "fn3". Метод представляет собой стрелочную функцию (() => console.log(this)). Стрелочные функции не имеют собственного контекста this и вместо этого наследуют его из окружающего контекста. В данном случае это глобальный объект.
+
+// const extModule = { new: 123 };: Создает объект extModule с свойством "new" и значением 123.
+
+// const val = obj.fn1.bind(extModule);: Привязывает метод fn1 объекта obj к объекту extModule. Это означает, что при вызове val(), this внутри fn1 будет ссылаться на объект extModule.
+
+// val.bind(this);: Эта строка ничего не делает. Метод bind создает новую функцию с указанным значением this, но это не изменяет оригинальную функцию или ее привязку.
+
+// obj.fn2.call(extModule);: Вызывает метод fn2 объекта obj с явно заданным объектом extModule в качестве значения this. Таким образом, внутри fn2 this будет объектом extModule.
+
+// obj[fnName].apply(extModule);: Вызывает метод с именем, равным значению fnName (то есть "fn3"), с extModule в качестве значения this. Подобно поведению стрелочных функций, метод apply не влияет на значение this стрелочных функций и по-прежнему выведет глобальный объект.
+
+// Вывод в консоль можно описать следующим образом:
+
+// Первый console.log(this); выведет obj.
+// console.log(this); внутри fn1 и в стрелочной функции, присвоенной fn3, также выведет глобальный объект.
+// console.log(this); внутри fn2 выведет объект obj.
+// Вызов val() выведет объект extModule.
+// Вызов obj.fn2.call(extModule); выведет объект extModule.
+// Вызов obj[fnName].apply(extModule); выведет глобальный объект.
+
+//В браузере: глобальный объект будет window.
+// В Node.js: глобальный объект будет global.
+
+// Promise.reject('a') // 
+//     .then(p=>p+'1',p=>p+'2') // 
+//     .catch(p=>p+'b') //
+//     .catch(p=>p+'с') //
+//     .then(p=>p+'d1') // 
+//     .then('d2') //
+//     .then(p=>p+'d3') // 
+//     .finally(p=>p+'e') // 
+//     .then(p=>console.log(p)) // ?
+
+
+
+

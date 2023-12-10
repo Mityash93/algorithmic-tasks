@@ -1,11 +1,26 @@
 1; // Фиббоначи (вводишь число и тебе сумма последнего через рекурсию)
 // const fibo = [1,1,2,3,5,8,13,21]
 
-// function fibo(number) {
-//   if (number < 0) return 0;
-//   if (number <= 2) return 1;
+// function fibo(n) {
+// //   if (number < 0) return 0;
+// //   if (number <= 2) return 1;
 
-//   return fibo(number - 1) + fibo(number - 2);
+// //   return fibo(number - 1) + fibo(number - 2);
+
+// const sequence = [0, 1]
+
+// if (n < 2) {
+//   return sequence.slice(0, n)
+// }
+
+// while (sequence.length < n) {
+//   const last = sequence[sequence.length - 1]
+//   const prev = sequence[sequence.length - 2]
+//   sequence.push(last + prev)
+// }
+
+// return sequence
+
 // }
 
 // console.log(fibo(5));
@@ -414,23 +429,7 @@
 // console.log(isUnique('abcadef')) // -> false
 
 2;
-// function flatten(array) {
-//   //   return array.flat(Infinity)
-
-//   let res = [];
-
-//   array.forEach((arr) => {
-//     if (Array.isArray(arr)) {
-//       res = [...res, ...flatten(arr)];
-//     } else {
-//       res.push(arr);
-//     }
-//   });
-
-//   return res;
-// }
-
-// console.log(flatten([[1], [[2, 3]], [[[4]]]])); // -> [1, 2, 3, 4]
+// sr
 
 3;
 // function removeDupes(str) {
@@ -554,20 +553,411 @@
 // console.log(search([1, 3, 6, 13, 17], 13)); // -> 3
 // console.log(search([1, 3, 6, 13, 17], 12)); // -> -1
 
-7;
-function arraySubset(source, subset) {
-    for (let i = 0; i < subset.length; i++) {
-        if (source.includes(subset[i])) {
-           source.splice(source.indexOf(subset[i]), 1);
-        //    delete source[source.indexOf(subset[i])];
-        } else {
-          return false; 
-        }
-      }
-      return true;
-}
+// 7;
+// function arraySubset(source, subset) {
+//     for (let i = 0; i < subset.length; i++) {
+//         if (source.includes(subset[i])) {
+//            source.splice(source.indexOf(subset[i]), 1);
+//         //    delete source[source.indexOf(subset[i])];
+//         } else {
+//           return false;
+//         }
+//       }
+//       return true;
+// }
 
-console.log(arraySubset([2, 1, 3], [1, 2, 3])); // -> true
-console.log(arraySubset([2, 1, 1, 3], [1, 2, 3])); // -> true
-console.log(arraySubset([1, 1, 1, 3], [1, 3, 3])); // -> false
-console.log(arraySubset([1, 2], [1, 2, 3])); // -> false
+// console.log(arraySubset([2, 1, 3], [1, 2, 3])); // -> true
+// console.log(arraySubset([2, 1, 1, 3], [1, 2, 3])); // -> true
+// console.log(arraySubset([1, 1, 1, 3], [1, 3, 3])); // -> false
+// console.log(arraySubset([1, 2], [1, 2, 3])); // -> false
+
+8;
+// function allAnagrams(array) {
+//     for (let i = 0; i < array[0].length; i++) {
+//         if(!array[1].includes(array[0][i]) || !array[2].includes(array[0][i])) {
+//             return false
+//         }
+//     }
+//     return true
+
+// //     const sorted = array.map(str => str.split('').sort().join(''))
+
+// //   for (let i = 1; i < sorted.length; i++) {
+// //     if (sorted[i] !== sorted[0]) {
+// //       return false
+// //     }
+// //   }
+// //   return true
+//   }
+
+//   console.log(allAnagrams(['abcd', 'bdac', 'cabd'])) // true
+//   console.log(allAnagrams(['abcd', 'bdXc', 'cabd'])) // false
+
+9;
+// [1, 2, 3]    [7, 4, 1]
+// [4, 5, 6] -> [8, 5, 2]
+// [7, 8, 9]    [9, 6, 3]
+
+// const matrix = [
+//   [1, 2, 3],
+//   [4, 5, 6],
+//   [7, 8, 9],
+// ];
+
+// function rotate(source) {
+//   const newMatrix = source.map(() => []);
+
+//   for (let i = 0; i < source.length; i++) {
+//     for (let j = 0; j < source[i].length; j++) {
+//       newMatrix[j][source.length - 1 - i] = source[i][j];
+//     }
+//   }
+
+//   return newMatrix;
+// }
+
+// function rotate180(source) {
+//   return rotate(rotate(source));
+// }
+
+// function rotate270(source) {
+//   return rotate180(rotate(source));
+// }
+
+// console.log(rotate(matrix));
+
+10;
+// function isBalanced(string) {
+//   const stack = [];
+//   const map = {
+//     "(": ")",
+//     "[": "]",
+//     "{": "}",
+//   };
+
+//   for (let i = 0; i < string.length; i++) {
+//     let c = string[i];
+//     if (map[c]) {
+//       stack.push(map[c]);
+//     } else if (c !== stack.pop()) {
+//       return false;
+//     }
+//   }
+
+//   return !stack.length;
+
+// //   const start = '({['
+// //   const end = ']})'
+
+// //   const map = {
+// //     '}': '{',
+// //     ')': '(',
+// //     ']': '['
+// //   }
+
+// //   const queue = []
+
+// //   for (let i = 0; i < string.length; i++) {
+// //     const char = string[i]
+
+// //     if (start.includes(char)) {
+// //       queue.push(char)
+// //     } else if (end.includes(char)) {
+// //       const last = queue.pop()
+
+// //       if (map[char] !== last) {
+// //         return false
+// //       }
+// //     }
+// //   }
+
+// //   return !queue.length
+// }
+
+// console.log(isBalanced("(x + y) - (4)")); // -> true
+// console.log(isBalanced("(((10 ) ()) ((?)(:)))")); // -> true
+// console.log(isBalanced("[{()}]")); // -> true
+// console.log(isBalanced("(50)(")); // -> false
+// console.log(isBalanced("[{]}")); // -> false
+
+// const arr2 = [1, 2, 3];
+// const arr1 = [5, 6];
+
+// const sum = () => {
+//     const num1 = BigInt(arr1.join(''));
+//     const num2 = BigInt(arr2.join(''));
+
+//     return (num1 + num2).toString().split('')
+
+// }
+
+// console.log(sum(arr2, arr1));
+
+// var removeDuplicates = function (nums) {
+//   return nums.reduce((acc, el) => {
+//     if (!acc.includes(el)) {
+//       acc.push(el);
+//     }
+//     return acc;
+//   }, []);
+// };
+
+// console.log(removeDuplicates([1, 1, 2]));
+
+// const findVowels = (str) => {
+//     const vowels = ['a', 'e', 'i', 'o', 'u']
+//     let count = 0
+
+//     for (let el of str.toLowerCase()) {
+//         if (vowels.includes(el)) {
+//             count++
+//         }
+//     }
+
+//     return count;
+// }
+
+// console.log(findVowels('helalou'));
+
+// const funcObj = (str) => {
+//     const obj = {}
+
+//     for (let el of str) {
+//         if (!obj[el]) {
+//             obj[el] = 1
+//         } else {
+//             obj[el]++
+//         }
+//     }
+
+//     return obj
+// }
+
+// const anagrama = (str1, str2) => {
+//     // const newStr1 = funcObj(str1.toLowerCase())
+//     // const newStr2 = funcObj(str2.toLowerCase())
+
+//     // if (Object.keys(newStr1).length !== Object.keys(newStr2).length) return false
+
+//     // for (let el in newStr1) {
+//     //     if (newStr1[el] !== newStr2[el]) return false
+//     // }
+
+//     // return true;
+
+//     // return [...str1.toLowerCase()].sort().join('') === [...str2.toLowerCase()].sort().join('')
+// }
+
+// console.log(anagrama('friend', 'Rfeind'));
+
+// const obj = {
+//     name: "dima",
+//     age: 30
+// }
+
+// const func = (obj) => {
+
+//     const res = Object.keys(obj).map((el) => {
+
+//         return `${el}: ${obj[el]}`
+//     }).join(', ')
+
+//     return res
+// }
+
+// console.log(func(obj));
+
+// Задача про classNames
+
+// const classNames = [
+//   "header",
+//   "menu",
+//   "menu-item",
+//   "menu-item",
+//   "menu-item",
+//   "footer",
+//   "menu",
+//   "link",
+//   "link",
+//   "link",
+//   "link",
+// ];
+
+// // const result = ["link", "menu-item", "menu", "header", "footer"]
+
+// const classNamesCount = (classNames) => {
+//     const obj = classNames.reduce((acc, el) => {
+//         if(!acc[el]){
+//             acc[el] = 1
+//         } else {
+//             acc[el]++
+//         }
+//         return acc
+//     }, {})
+
+//     return Object.keys(obj).sort((a, b) => obj[b] - obj[a])
+// }
+
+// console.log(classNamesCount(classNames));
+
+// const separateArrayByGroups = (arr, numberOfGroups) => {
+//   let res = [];
+
+//   for (let i = 0; i < arr.length; ) {
+//     res = [...res, arr.slice(i, i + numberOfGroups)];
+//     i += numberOfGroups;
+//   }
+
+//   return res;
+// };
+
+// const result = separateArrayByGroups(["a", "b", "c", "d", "e", "f"], 2);
+
+// console.log(result); // [ [ 'a', 'b' ], [ 'c', 'd' ], [ 'e', 'f' ] ]
+
+// const diffArr = (arr1, arr2) => {
+//   const res = [];
+
+//   arr1.forEach((el) => {
+//     !arr2.includes(el) ? res.push(el) : null
+//   });
+
+//   arr2.forEach((el) => {
+//     !arr1.includes(el) ? res.push(el) : null
+//   });
+
+//   return res;
+// };
+
+// const result = diffArr([1, 2, 3, 5, 6], [1, 2, 3, 4, 5]);
+
+// console.log(result); // [6, 4]
+
+// const getMarFromArray = (arr) => {
+//   return arr.reduce((acc, el) => {
+//     acc[el['id']] = el;
+//     return acc;
+//   }, {});
+// };
+
+// const result = getMarFromArray([
+//   { id: 1, name: "Elon" },
+//   { id: 2, name: "Mark" },
+//   { id: 3, name: "John" },
+//   { id: 4, name: "Bill" },
+//   { id: 5, name: "Kyle" },
+//   { id: 6, name: "Tom" },
+//   { id: 7, name: "Jack" },
+// ]);
+
+// console.log(result);
+//   {
+//     1: {id: 1, name: ‘Elon’},
+//     2: {id: 2, name: ‘Mark’},
+//     3: {id: 3, name: ‘John’},
+//     4: {id: 4, name: ‘Bill’},
+//     5: {id: 5, name: ‘Kyle’},
+//     6: {id: 6, name: ‘Tom’},
+//     7: {id: 7, name: ‘Jack’}
+//   }
+
+// function* fibGenerator() {
+//     let a = 0;
+//     let b = 1;
+
+//     while (true) {
+//       yield a;
+//       [a, b] = [b, a + b];
+//     }
+//   }
+
+//   const gen = fibGenerator();
+
+//   console.log(gen.next().value); // 0
+//   console.log(gen.next().value); // 1
+//   console.log(gen.next().value); // 1
+//   console.log(gen.next().value); // 2
+//   console.log(gen.next().value); // 3
+
+// function ebat() {
+//   console.log(arguments);
+// }
+
+// ebat(23, "zaebal", 123);
+
+// const funcCount = () => {
+//     let count = 0
+
+//     return () => {
+//         count++
+
+//         return count
+//     }
+// }
+
+// const count = funcCount()
+
+// console.log(count());
+// console.log(count());
+// console.log(count());
+
+// const arr = [1, 4, 3, 6, 4, 2, 5, 7, 5, 5, 3, 2, 5, 6, 3, 7, 4];
+
+// const func = (arr) => {
+//   const obj = arr.reduce((acc, el) => {
+//     !acc[el] ? (acc[el] = 1) : acc[el]++;
+
+//     return acc;
+//   }, {});
+
+//   let res = "";
+//   let count = 0;
+
+//   Object.keys(obj).forEach((el) => {
+//     if (obj[el] > count) {
+//       count = obj[el];
+//       res = `${el} : ${obj[el]}`;
+//     }
+//   });
+
+//   return res;
+// };
+
+// console.log(func(arr));
+
+// function getPersonInfo(one, two, three) {
+//   console.log(one);
+//   console.log(two);
+//   console.log(three);
+// }
+
+// const person = "Lydia";
+// const age = 21;
+
+// getPersonInfo`${person} is ${age} years old`;
+
+// setTimeout(() => {
+//   console.log("timeout");
+// }, 0);
+
+// console.log(1);
+
+// new Promise((resolve) => {
+//   console.log("Promise");
+//   setTimeout(() => {
+//     console.log("777");
+//     resolve();
+//   }, 0);
+// })
+//   .then(() => {
+//     console.log("then1");
+//   })
+//   .then(() => {
+//     console.log("then2");
+
+//     console.log(4);
+
+//     setTimeout(() => {
+//       console.log("timeout2");
+//     }, 0);
+//   });
